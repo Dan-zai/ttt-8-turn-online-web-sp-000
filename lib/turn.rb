@@ -36,11 +36,15 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
+  #asks player for input
   input = gets.chomp 
+  #uses get chomp to set input data
   index = input_to_index(input)
+  #assigns input to input_to_index method
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
+    #using valid move method, checks if move is allowed, if true sets move as X in input and displays board
   else turn(board)
 end
 end
